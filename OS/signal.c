@@ -11,13 +11,19 @@ void catch_int(int sig_num) {
 }
 
 int main() {
-  signal(2, catch_int);
+  // signal(2, catch_int);
+  signal(9, SIG_IGN);
 
   printf("Have a Great day\n");
 
+  while (1) {
+    printf("Happy Maha Shivratri\n");
+    sleep(1);
+  }
+
   pause();
 
-  printf("Yeah Thank you\n");
+  printf("Yeahyy Thank you\n");
 
   return 0;
 }
