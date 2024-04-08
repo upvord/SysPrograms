@@ -1,9 +1,14 @@
+#include <semaphore.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/shm.h>
 #include <unistd.h>
+
+sem_t *s;
+
 int main() {
+  s = sem_open("/my_semaphore", 0);
   int i;
   void *shared_memory;
   char buff[100];
